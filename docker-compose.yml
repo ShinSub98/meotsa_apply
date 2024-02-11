@@ -35,7 +35,7 @@ services:
     image: mysql:latest
     container_name: mysql_db
     environment:
-      MYSQL_ROOT_PASSWORD: ${db_password} # .env에 있는 db_password와 연결
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD} # .env에 있는 db_password와 연결
       MYSQL_DATABASE: meotsa
     volumes:
       - database:/var/lib/mysql
