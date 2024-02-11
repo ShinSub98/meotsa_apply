@@ -3,6 +3,7 @@ version: '3.8'
 services:
   db:
     image: mysql:5.7
+    container_name: mysql_db
     volumes:
       - mysql_data:/var/lib/mysql
     environment:
@@ -12,7 +13,8 @@ services:
       - "3306:3306"
 
   web:
-    build: .
+    image: server
+    container_name: web
     command: gunicorn meotsa_apply.likelion10th.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/app
@@ -28,6 +30,7 @@ services:
 
   nginx:
     image: nginx:latest
+    container_name: nginx
     ports:
       - "80:80"
     volumes:
