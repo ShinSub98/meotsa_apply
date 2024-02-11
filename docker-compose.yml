@@ -15,7 +15,8 @@ services:
   web:
     image: server
     container_name: web
-    command: gunicorn meotsa_apply.likelion10th.wsgi:application --bind 0.0.0.0:8000
+    command: bash -c "
+      while ! nc -z mysql_db 3306; do sleep 1; done && python manage.py makemigrations && python manage.py migrate && gunicorn likelion10th.wsgi:application -b 0.0.0.0:8000"
     volumes:
       - .:/app
     ports:
