@@ -6,14 +6,16 @@ DEBUG = False
 ALLOWED_HOSTS = [ config("ALLOWED_HOST"), "www.likelion-hufs-seoul.com", "likelion-hufs-seoul.com" ]
 
 
+import pymysql
+pymysql.install_as_MySQLdb()
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        "NAME": config("DB_NAME"),
-        "USER": config("DB_USER"),
-        "PASSWORD": config("DB_PASSWORD"),
-        "HOST": config("DB_HOST"),
-        "PORT": config("DB_PORT"),
-        "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'meotsa',
+        'USER': 'root',
+        'PASSWORD': config('.env에서 설정한 DB 패스워드'),
+        'HOST': 'mysql_db',
+        'PORT': '3306'
     }
 }
