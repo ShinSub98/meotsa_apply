@@ -60,5 +60,5 @@ class Apply(models.Model):
         auto_now=True,
     )
     class Meta:
-        managed = False
+        managed = True
         db_table = 'apply'

@@ -139,5 +139,5 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.is_superuser
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'user'
