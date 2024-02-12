@@ -127,3 +127,7 @@ STATIC_ROOT = Path(BASE_DIR, 'static') # BASE_DIR/static
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'account.User'
+
+CSRF_TRUSTED_ORIGINS = [
+"https://hufs-likelion12.site",
+]
