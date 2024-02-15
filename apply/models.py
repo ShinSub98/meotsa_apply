@@ -26,7 +26,7 @@ class Apply(models.Model):
         choices = CATEGORY_CHOICES,
         null=False,
         #choice의 기본값을 설정해줍니다.
-        default="P/D",
+        default="FE",
     )
     study_url = models.CharField(
         max_length=2100,
