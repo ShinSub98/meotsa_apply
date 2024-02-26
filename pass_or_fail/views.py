@@ -5,9 +5,9 @@ import datetime
 
 @login_required(login_url='/account/login/')
 def pass_or_fail(request):
-    release_date = datetime.datetime(2024, 2, 27, 14, 0)
-    if datetime.datetime.now() < release_date:  # 현재 시간이 3월 7일 서류 합격 발표날보다 일찍이라면 접근할 수 없음.
-        return redirect('home')
+    # release_date = datetime.datetime(2024, 2, 27, 18, 0)
+    # if datetime.datetime.now() < release_date:
+    return redirect('home')
 
     User = request.user #로그인된 유저 뽑아내기
     pass_key = User.is_accepted

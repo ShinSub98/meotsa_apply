@@ -52,6 +52,9 @@ def mydetail(request):
 @login_required(login_url='/account/login/')
 def submit(request):
     application = Apply.objects.get(user = request.user)
+    user = request.user
+    user.is_additional = True
+    user.save()
     application.is_submitted = True
     application.save()
     return redirect('home')

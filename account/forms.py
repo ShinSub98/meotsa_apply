@@ -58,6 +58,7 @@ class SignUpform(forms.ModelForm):
         user=super().save(commit=False)
         email=self.cleaned_data.get('email')
         password=self.cleaned_data.get('password')
+        user.is_additional=True
         user.username=email
         user.set_password(password)
         user.save()

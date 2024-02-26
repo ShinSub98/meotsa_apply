@@ -123,6 +123,11 @@ class User(AbstractBaseUser, PermissionsMixin):
         default=True,
     )
 
+    is_additional = models.BooleanField(
+        verbose_name=("Is additional"),
+        default=False,
+    )
+
     # email field와 역할이 겹치는 면이 있는 것 같아 임시로 주석처리 하였습니다.
     # 기능상으로는 username이나 email중 어느 쪽을 사용해도 동일하니, 혹시라도 username이 꼭 필요한 것 같다는 의견이 있을시 수정하겠습니다.
 
