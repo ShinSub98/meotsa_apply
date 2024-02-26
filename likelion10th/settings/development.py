@@ -33,13 +33,13 @@ CORS_ALLOW_CREDENTIALS = True
 import pymysql
 pymysql.install_as_MySQLdb()
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql', 
-#         'NAME': 'meotsa',
-#         'USER': 'root',
-#         'PASSWORD': config('MYSQL_ROOT_PASSWORD'),
-#         'HOST': 'mysql_db',
-#         'PORT': '3306'
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'meotsa',
+        'USER': 'root',
+        'PASSWORD': config('MYSQL_ROOT_PASSWORD'),
+        'HOST': 'mysql_db',
+        'PORT': '3306'
+    }
+}
