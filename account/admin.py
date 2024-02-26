@@ -12,6 +12,7 @@ class Useradmin(admin.ModelAdmin):
         "name",
         "email",
         "phone_num",
+        "is_additional",
     )
 
     readonly_fields = (
@@ -25,4 +26,5 @@ class Useradmin(admin.ModelAdmin):
         "last_login",
         "password",
         "is_active",
+        "is_additional",
     )

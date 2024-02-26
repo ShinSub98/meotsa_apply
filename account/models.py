@@ -124,7 +124,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
 
     is_additional = models.BooleanField(
-        verbose_name=("Is additional"),
+        verbose_name=("추가 모집"),
         default=False,
     )
 
