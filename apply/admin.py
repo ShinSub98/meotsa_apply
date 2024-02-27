@@ -9,6 +9,7 @@ class Applyadmin(admin.ModelAdmin):
     list_display = (
         "user",
         "is_submitted",
+        "get_accepted"
     )
     #admin에서 수정할 수 없는 그러니까 오직 읽을 수만 있는 필드를 지정합니다. 
     readonly_fields = (
@@ -23,3 +24,7 @@ class Applyadmin(admin.ModelAdmin):
         "updated_at",
         "is_submitted",
     )
+
+    def get_accepted(self, obj):
+        return obj.user.is_accepted
+    get_accepted.short_description = "합격 여부"
