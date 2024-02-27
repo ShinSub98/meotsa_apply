@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import User
+from apply.models import Apply
 
 #우리가 배웠던 admin 페이지에 모델을 등록하는 함수가 admin.register이고 이에 User 라는 모델을 담은 것입니다. 
 #이에 대한 상세한 설정을 할 수 있도록 해주는 클래스를 따로 지정한 것입니다. 
@@ -13,6 +14,7 @@ class Useradmin(admin.ModelAdmin):
         "phone_num",
         "is_accepted",
         "is_additional",
+        "get_is_submitted"
     )
 
     readonly_fields = (
@@ -28,3 +30,8 @@ class Useradmin(admin.ModelAdmin):
         "is_active",
         "is_additional",
     )
+
+    def get_is_submitted(self, obj):
+        apply = Apply.objects.get(user = obj)
+        return apply.is_submitted
+    get_is_submitted.short_description = "제출 여부"
