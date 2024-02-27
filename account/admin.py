@@ -10,8 +10,8 @@ class Useradmin(admin.ModelAdmin):
     #이름, 이메일, 휴대폰 번호 순으로 우리는 유저의 정보를 볼 수 있게 됩니다. 
     list_display = (
         "name",
-        "email",
         "phone_num",
+        "is_accepted",
         "is_additional",
     )
 
